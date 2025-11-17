@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Full Screen Emulator Embed</title>
+  <title>Super Mario 64</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     html, body {
@@ -35,9 +35,6 @@
   </style>
 </head>
 <body>
-  <div class="info">
-    Use this emulator by uploading your own legal ROM of the game.
-  </div>
   <div id="emulator-container"></div>
   <script src="emulator.js"></script>
   <script>
