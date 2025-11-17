@@ -15,23 +15,20 @@
 
     body {
       display: flex;
-      flex-direction: row;   /* split screen left/right */
-      height: 100vh;         /* full viewport height */
+      flex-direction: column;
+      height: 100vh; /* full viewport height */
       overflow: hidden;
     }
 
-    .left, .right {
-      width: 50%;            /* each half of the page */
-      height: 100%;          /* full height */
-      display: flex;
-      flex-direction: column;
-    }
-
     .top-bar {
+      height: 64px; /* fixed title bar height */
+      width: 100%;
       background: #1565c0;
-      padding: 0.75em 0;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      flex-shrink: 0;
     }
 
     .top-bar-title {
@@ -42,29 +39,30 @@
       letter-spacing: 1px;
     }
 
+    .embed-row {
+      display: flex;
+      width: 100%;
+      height: calc(100vh - 64px); /* fill rest of screen below title bar */
+    }
+
     iframe {
       border: none;
-      flex: 1;               /* iframe fills remaining space */
-      width: 100%;
+      width: 50%;   /* each iframe takes half the width */
+      height: 100%; /* full height of the row */
     }
   </style>
 </head>
 <body>
-  <div class="left">
-    <div class="top-bar">
-      <span class="top-bar-title">GN Math</span>
-    </div>
+  <div class="top-bar">
+    <span class="top-bar-title">DLC</span>
+  </div>
+  <div class="embed-row">
     <iframe
       src="https://lebro29.github.io/gn/"
       allowfullscreen
       loading="lazy"
       title="GN Math"
     ></iframe>
-  </div>
-  <div class="right">
-    <div class="top-bar">
-      <span class="top-bar-title">Eaglercraft</span>
-    </div>
     <iframe
       src="https://eaglercraft-unblocked.neocities.org/"
       allowfullscreen
