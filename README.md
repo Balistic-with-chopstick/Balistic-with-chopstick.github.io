@@ -21,7 +21,7 @@
     }
 
     .top-bar {
-      height: 10vh;    /* heading takes 10% of screen height */
+      height: 64px;    /* fixed heading height */
       width: 100%;
       background: #1565c0;
       display: flex;
@@ -39,15 +39,17 @@
     }
 
     .embed-row {
-      height: 90vh;    /* remaining 90% of screen */
-      width: 100%;
+      flex: 1;              /* take up all remaining vertical space */
       display: flex;
+      flex-direction: row;  /* horizontal layout */
+      width: 100%;
+      height: 100%;
     }
 
     iframe {
       border: none;
-      width: 50%;      /* each iframe takes half the width */
-      height: 100%;    /* full height of embed row */
+      width: 50%;           /* each iframe takes half the width */
+      height: 100%;         /* full height of the row */
     }
   </style>
 </head>
