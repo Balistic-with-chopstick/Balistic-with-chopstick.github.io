@@ -10,11 +10,12 @@
       padding: 0;
       background: #000;
       font-family: Arial, Helvetica, sans-serif;
+      height: 100%;
     }
     body {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      height: 100vh;
     }
     .top-bar {
       background: #1565c0;
@@ -35,24 +36,21 @@
     }
     .embed-row {
       display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: stretch;
+      flex: 1;              /* take up remaining space */
       width: 100%;
-      max-width: 1600px; /* optional: limit width */
     }
     iframe {
       border: none;
-      flex: 1;
-      min-width: 0;
-      height: 80vh; /* scrolls if taller */
+      width: 50%;           /* each iframe takes half the screen */
+      height: 100%;         /* full height below the title bar */
     }
     @media (max-width: 900px) {
       .embed-row {
         flex-direction: column; /* stack vertically on small screens */
       }
       iframe {
-        height: 60vh;
+        width: 100%;
+        height: 50vh;
       }
     }
     @media (max-width: 600px) {
