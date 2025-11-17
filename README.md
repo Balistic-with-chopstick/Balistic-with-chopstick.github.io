@@ -20,28 +20,27 @@
     .top-bar {
       background: #1565c0;
       width: 100%;
-      height: 15vh; /* title bar takes 15% of screen height */
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      flex: 0 0 auto;       /* fixed height for title bar */
+      padding: 1em 0;
+      text-align: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
     .top-bar-title {
       color: #fff;
-      font-size: 4vw; /* scales with screen width */
+      font-size: 2rem;
       font-weight: bold;
       margin: 0;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
     }
     .embed-row {
+      flex: 1;              /* take up ALL remaining space */
       display: flex;
-      flex: 1;          /* take up remaining vertical space */
       width: 100%;
     }
     iframe {
       border: none;
-      width: 50%;       /* each iframe takes half the screen horizontally */
-      height: 100%;     /* full height below the title bar */
+      width: 50%;           /* each iframe takes half the width */
+      height: 100%;         /* fill the row vertically */
     }
     @media (max-width: 900px) {
       .embed-row {
@@ -49,14 +48,11 @@
       }
       iframe {
         width: 100%;
-        height: 50%;    /* each takes half vertically when stacked */
+        height: 50%;        /* each takes half vertically when stacked */
       }
-      .top-bar {
-        height: 10vh;   /* shrink title bar on smaller screens */
-      }
-      .top-bar-title {
-        font-size: 6vw;
-      }
+    }
+    @media (max-width: 600px) {
+      .top-bar-title { font-size: 1.2rem; }
     }
   </style>
 </head>
