@@ -5,54 +5,54 @@
   <title>DLC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    :root { --bar-height: 64px; }
+
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       background: #000;
       font-family: Arial, Helvetica, sans-serif;
+      box-sizing: border-box;
     }
+    *, *::before, *::after { box-sizing: inherit; }
+
     body {
+      height: 100vh;          /* exactly the viewport height */
+      overflow: hidden;       /* no extra scrolling */
       display: flex;
       flex-direction: column;
-      height: 100vh; /* full viewport height */
     }
+
     .top-bar {
+      height: var(--bar-height);
+      width: 100vw;
       background: #1565c0;
-      width: 100%;
-      flex: 0 0 auto;       /* fixed height for title bar */
-      padding: 1em 0;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      flex: 0 0 var(--bar-height); /* fixed height */
     }
+
     .top-bar-title {
       color: #fff;
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: bold;
       margin: 0;
       letter-spacing: 1px;
     }
+
     .embed-row {
-      flex: 1;              /* take up ALL remaining space */
+      width: 100vw;
+      height: calc(100vh - var(--bar-height)); /* fill the rest of the screen */
       display: flex;
-      width: 100%;
     }
+
     iframe {
       border: none;
-      width: 50%;           /* each iframe takes half the width */
-      height: 100%;         /* fill the row vertically */
-    }
-    @media (max-width: 900px) {
-      .embed-row {
-        flex-direction: column; /* stack vertically on small screens */
-      }
-      iframe {
-        width: 100%;
-        height: 50%;        /* each takes half vertically when stacked */
-      }
-    }
-    @media (max-width: 600px) {
-      .top-bar-title { font-size: 1.2rem; }
+      width: 50vw;   /* half the screen each */
+      height: 100%;  /* full remaining height */
     }
   </style>
 </head>
@@ -65,13 +65,13 @@
       src="https://lebro29.github.io/gn/"
       allowfullscreen
       loading="lazy"
-      title="GN Math Game"
+      title="GN Math"
     ></iframe>
     <iframe
       src="https://eaglercraft-unblocked.neocities.org/"
       allowfullscreen
       loading="lazy"
-      title="Eaglercraft Game"
+      title="Eaglercraft"
     ></iframe>
   </div>
 </body>
