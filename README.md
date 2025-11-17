@@ -18,7 +18,7 @@
       display: flex;
       flex-direction: column;
     }
-    .fullscreen-frame {
+    .fullscreen-frame, #emulator-container {
       flex: 1;
       border: none;
       width: 100vw;
@@ -38,10 +38,12 @@
   <div class="info">
     Use this emulator by uploading your own legal ROM of the game.
   </div>
-  <iframe
-    class="fullscreen-frame"
-    src="https://c930n.github.io/seraph/games/sm64/index.html"
-    allowfullscreen
-  ></iframe>
+  <div id="emulator-container"></div>
+  <script src="emulator.js"></script>
+  <script>
+    // Place your emulator initialization here.
+    // For example, if you're using a specific JS N64 emulator, initialize it with the container:
+    // Emulator.init(document.getElementById('emulator-container'));
+  </script>
 </body>
 </html>
