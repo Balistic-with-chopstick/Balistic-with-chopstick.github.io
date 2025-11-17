@@ -17,7 +17,7 @@
 
     body {
       display: flex;
-      flex-direction: column;
+      flex-direction: column; /* stack vertically */
     }
 
     .top-bar {
@@ -28,6 +28,7 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      flex-shrink: 0;
     }
 
     .top-bar-title {
@@ -38,18 +39,18 @@
       letter-spacing: 1px;
     }
 
-    .embed-row {
+    .embed-column {
       flex: 1;              /* take up all remaining vertical space */
       display: flex;
-      flex-direction: row;  /* horizontal layout */
+      flex-direction: column; /* stack iframes vertically */
       width: 100%;
       height: 100%;
     }
 
     iframe {
       border: none;
-      width: 50%;           /* each iframe takes half the width */
-      height: 100%;         /* full height of the row */
+      width: 100%;           /* full width of the page */
+      flex: 1;               /* each iframe takes equal height */
     }
   </style>
 </head>
@@ -57,18 +58,18 @@
   <div class="top-bar">
     <span class="top-bar-title">DLC</span>
   </div>
-  <div class="embed-row">
-    <iframe
-      src="https://lebro29.github.io/gn/"
-      allowfullscreen
-      loading="lazy"
-      title="GN Math"
-    ></iframe>
+  <div class="embed-column">
     <iframe
       src="https://eaglercraft-unblocked.neocities.org/"
       allowfullscreen
       loading="lazy"
       title="Eaglercraft"
+    ></iframe>
+    <iframe
+      src="https://lebro29.github.io/gn/"
+      allowfullscreen
+      loading="lazy"
+      title="GN Math"
     ></iframe>
   </div>
 </body>
