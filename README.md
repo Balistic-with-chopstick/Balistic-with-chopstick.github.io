@@ -10,12 +10,11 @@
       padding: 0;
       background: #000;
       font-family: Arial, Helvetica, sans-serif;
-      height: 100%;
     }
     body {
       display: flex;
       flex-direction: column;
-      height: 100vh;
+      align-items: center;
     }
     .top-bar {
       background: #1565c0;
@@ -36,21 +35,24 @@
     }
     .embed-row {
       display: flex;
-      flex: 1;              /* take up remaining space */
+      flex-direction: row;
+      justify-content: center;
+      align-items: stretch;
       width: 100%;
+      max-width: 1600px; /* optional: limit width */
     }
     iframe {
       border: none;
-      width: 50%;           /* each iframe takes half the screen */
-      height: 100%;         /* full height below the title bar */
+      flex: 1;
+      min-width: 0;
+      height: 80vh; /* scrolls if taller */
     }
     @media (max-width: 900px) {
       .embed-row {
         flex-direction: column; /* stack vertically on small screens */
       }
       iframe {
-        width: 100%;
-        height: 50vh;
+        height: 60vh;
       }
     }
     @media (max-width: 600px) {
