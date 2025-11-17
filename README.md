@@ -5,8 +5,6 @@
   <title>DLC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    :root { --bar-height: 64px; }
-
     html, body {
       margin: 0;
       padding: 0;
@@ -17,20 +15,23 @@
 
     body {
       display: flex;
+      flex-direction: row;   /* split screen left/right */
+      height: 100vh;         /* full viewport height */
+      overflow: hidden;
+    }
+
+    .left, .right {
+      width: 50%;            /* each half of the page */
+      height: 100%;          /* full height */
+      display: flex;
       flex-direction: column;
-      height: 100vh; /* full viewport height */
-      overflow: hidden; /* no extra scrolling */
     }
 
     .top-bar {
-      height: var(--bar-height);
-      width: 100%;
       background: #1565c0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding: 0.75em 0;
+      text-align: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-      flex: 0 0 var(--bar-height); /* fixed height */
     }
 
     .top-bar-title {
@@ -41,30 +42,29 @@
       letter-spacing: 1px;
     }
 
-    .embed-row {
-      display: flex;
-      width: 100%;
-      height: calc(100vh - var(--bar-height)); /* fill rest of screen */
-    }
-
     iframe {
       border: none;
-      width: 50%;   /* half the screen each */
-      height: 100%; /* full remaining height */
+      flex: 1;               /* iframe fills remaining space */
+      width: 100%;
     }
   </style>
 </head>
 <body>
-  <div class="top-bar">
-    <span class="top-bar-title">DLC</span>
-  </div>
-  <div class="embed-row">
+  <div class="left">
+    <div class="top-bar">
+      <span class="top-bar-title">GN Math</span>
+    </div>
     <iframe
       src="https://lebro29.github.io/gn/"
       allowfullscreen
       loading="lazy"
       title="GN Math"
     ></iframe>
+  </div>
+  <div class="right">
+    <div class="top-bar">
+      <span class="top-bar-title">Eaglercraft</span>
+    </div>
     <iframe
       src="https://eaglercraft-unblocked.neocities.org/"
       allowfullscreen
