@@ -14,33 +14,26 @@
     body {
       width: 100vw;
       height: 100vh;
-      overflow: hidden;
+      overflow: auto; /* Allows scrolling */
       display: flex;
       flex-direction: column;
     }
-    .fullscreen-frame, #emulator-container {
+    .fullscreen-frame {
       flex: 1;
       border: none;
       width: 100vw;
       height: 100vh;
-    }
-    .info {
-      color: #fff;
-      background: #333;
-      padding: 0.5em;
-      text-align: center;
-      font-size: 0.9em;
-      z-index: 9;
+      /* Remove these if you want the iframe to be larger than the viewport */
+      min-width: 100vw;
+      min-height: 100vh;
     }
   </style>
 </head>
 <body>
-  <div id="emulator-container"></div>
-  <script src="emulator.js"></script>
-  <script>
-    // Place your emulator initialization here.
-    // For example, if you're using a specific JS N64 emulator, initialize it with the container:
-    // Emulator.init(document.getElementById('emulator-container'));
-  </script>
+  <iframe
+    class="fullscreen-frame"
+    src="https://lebro29.github.io/gn/"
+    allowfullscreen
+  ></iframe>
 </body>
 </html>
