@@ -5,12 +5,11 @@
   <title>DLC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    :root { --bar-height: 64px; }
-
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
+      width: 100%;
       background: #000;
       font-family: Arial, Helvetica, sans-serif;
     }
@@ -19,17 +18,17 @@
       display: flex;
       flex-direction: column;
       height: 100vh; /* full viewport height */
+      width: 100vw;  /* full viewport width */
     }
 
     .top-bar {
-      height: var(--bar-height);
+      flex: 0 0 64px; /* fixed height for heading */
       width: 100%;
       background: #1565c0;
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-      flex: 0 0 var(--bar-height); /* fixed height */
     }
 
     .top-bar-title {
@@ -41,17 +40,16 @@
     }
 
     .embed-row {
-      flex: 1; /* take up remaining vertical space */
+      flex: 1;              /* take up all remaining vertical space */
       display: flex;
-      justify-content: center; /* center horizontally */
-      align-items: center;     /* center vertically */
-      gap: 10px;               /* optional space between iframes */
+      width: 100%;
+      height: 100%;         /* fill the rest of the window */
     }
 
     iframe {
       border: none;
-      width: 45%;   /* each iframe takes ~half width but leaves gap */
-      height: 90%;  /* centered vertically with some margin */
+      width: 50%;           /* each iframe takes half the width */
+      height: 100%;         /* full height of the embed row */
     }
   </style>
 </head>
