@@ -15,7 +15,7 @@
     body {
       display: flex;
       flex-direction: column;
-      height: 100vh; /* full viewport height */
+      height: 100vh;
     }
     .top-bar {
       background: #1565c0;
@@ -36,13 +36,13 @@
     }
     .embed-row {
       display: flex;
-      flex: 1;          /* take up all remaining vertical space */
+      flex: 1;              /* take up remaining space */
       width: 100%;
     }
     iframe {
       border: none;
-      width: 50%;       /* each iframe takes half the screen horizontally */
-      height: 100%;     /* full height of the row */
+      width: 50%;           /* each iframe takes half the screen */
+      height: 100%;         /* full height below the title bar */
     }
     @media (max-width: 900px) {
       .embed-row {
@@ -50,7 +50,7 @@
       }
       iframe {
         width: 100%;
-        height: 50%;    /* each takes half vertically when stacked */
+        height: 50vh;
       }
     }
     @media (max-width: 600px) {
