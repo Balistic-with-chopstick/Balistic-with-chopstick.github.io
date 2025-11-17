@@ -13,20 +13,18 @@
       height: 100%;
       background: #000;
       font-family: Arial, Helvetica, sans-serif;
-      box-sizing: border-box;
     }
-    *, *::before, *::after { box-sizing: inherit; }
 
     body {
-      height: 100vh;          /* exactly the viewport height */
-      overflow: hidden;       /* no extra scrolling */
       display: flex;
       flex-direction: column;
+      height: 100vh; /* full viewport height */
+      overflow: hidden; /* no extra scrolling */
     }
 
     .top-bar {
       height: var(--bar-height);
-      width: 100vw;
+      width: 100%;
       background: #1565c0;
       display: flex;
       align-items: center;
@@ -37,22 +35,22 @@
 
     .top-bar-title {
       color: #fff;
-      font-size: 1.5rem;
+      font-size: 2rem;
       font-weight: bold;
       margin: 0;
       letter-spacing: 1px;
     }
 
     .embed-row {
-      width: 100vw;
-      height: calc(100vh - var(--bar-height)); /* fill the rest of the screen */
       display: flex;
+      width: 100%;
+      height: calc(100vh - var(--bar-height)); /* fill rest of screen */
     }
 
     iframe {
       border: none;
-      width: 50vw;   /* half the screen each */
-      height: 100%;  /* full remaining height */
+      width: 50%;   /* half the screen each */
+      height: 100%; /* full remaining height */
     }
   </style>
 </head>
