@@ -18,6 +18,7 @@
       overflow-y: scroll;   /* vertical scroll bar */
       overflow-x: hidden;   /* no horizontal scroll */
       color: #fff;
+      box-sizing: border-box;
     }
 
     /* ===========================
