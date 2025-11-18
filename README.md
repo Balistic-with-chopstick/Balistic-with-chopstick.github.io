@@ -5,9 +5,6 @@
   <title>DLC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    /* ===========================
-       Global Reset & Base Styles
-       =========================== */
     html, body {
       margin: 0;
       padding: 0;
@@ -19,9 +16,6 @@
       color: #fff;
     }
 
-    /* ===========================
-       Layout Containers
-       =========================== */
     body {
       display: flex;
       flex-direction: column;
@@ -30,7 +24,7 @@
     }
 
     .top-bar {
-      flex: 0 0 64px; /* fixed heading height */
+      flex: 0 0 64px;  /* fixed heading height */
       width: 100vw;
       background: #1565c0;
       display: flex;
@@ -48,11 +42,8 @@
       text-transform: uppercase;
     }
 
-    /* ===========================
-       Embed Section
-       =========================== */
     .embed-column {
-      flex: 1;              /* take up all remaining vertical space */
+      flex: 1;              /* take up remaining vertical space */
       display: flex;
       flex-direction: column;
       width: 100vw;
@@ -61,13 +52,10 @@
 
     iframe {
       border: none;
-      width: 100%;          /* full width */
-      flex: 1;              /* each iframe takes half of embed-column */
+      width: 100%;
+      flex: 1;              /* each iframe takes equal share of embed-column */
     }
 
-    /* ===========================
-       Footer Section
-       =========================== */
     footer {
       flex: 0 0 40px;       /* fixed footer height */
       width: 100vw;
