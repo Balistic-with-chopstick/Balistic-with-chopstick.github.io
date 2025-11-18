@@ -29,7 +29,7 @@
 
     .top-bar {
       height: 64px;
-      width: 100%;
+      width: 100vw; /* stretch to full viewport width */
       background: #1565c0;
       display: flex;
       align-items: center;
@@ -88,6 +88,7 @@
       padding: 20px;
       font-size: 0.9rem;
       border-top: 2px solid #1565c0;
+      width: 100vw; /* stretch footer bar too */
     }
 
     /* ===========================
