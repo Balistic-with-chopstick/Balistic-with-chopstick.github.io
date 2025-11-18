@@ -20,19 +20,24 @@
       color: #fff;
     }
 
+    /* ===========================
+       Layout Containers
+       =========================== */
     body {
       display: flex;
       flex-direction: column;
+      align-items: flex-start;   /* align everything to the left */
       width: 100vw;
     }
 
     .top-bar {
-      flex: 0 0 64px;
-      width: 100vw;
+      height: 64px;
+      width: 100vw;              /* stretch full width */
       background: #1565c0;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start; /* content aligned left */
+      padding-left: 20px;          /* spacing from left edge */
       box-shadow: 0 2px 4px rgba(0,0,0,0.4);
     }
 
@@ -51,18 +56,18 @@
     .embed-column {
       display: flex;
       flex-direction: column;
-      width: 100vw;       /* fit screen horizontally */
-      height: auto;       /* let content define height */
+      width: 100vw;              /* stretch full width */
       gap: 20px;
       padding: 20px;
       box-sizing: border-box;
+      align-items: flex-start;   /* align iframes to left */
     }
 
     iframe {
       border: 4px solid #1565c0;
       border-radius: 12px;
-      width: 100%;        /* full width */
-      height: 200vh;      /* each iframe is 2x viewport height */
+      width: 100%;               /* full width of window */
+      height: 120vh;             /* taller than viewport for scroll */
       box-shadow: 0 8px 16px rgba(0,0,0,0.6);
     }
 
@@ -70,10 +75,10 @@
        Footer Section
        =========================== */
     footer {
-      width: 100vw;
+      width: 100vw;              /* stretch full width */
       background: #222;
       color: #aaa;
-      text-align: center;
+      text-align: left;          /* align text left */
       padding: 20px;
       font-size: 0.9rem;
       border-top: 2px solid #1565c0;
