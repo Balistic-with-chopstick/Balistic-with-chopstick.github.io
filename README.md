@@ -1,2 +1,1 @@
-#Balistic-with-chopstick
-sup
+#Balistic-with-chopstick.github.io
